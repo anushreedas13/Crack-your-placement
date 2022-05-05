@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int maxProfit(vector<int>& p) {
+        int mn=p[0];
+        int sum=0;
+        for(int i=1;i<p.size();i++){
+            if(p[i]<mn){
+                mn=p[i];
+            }
+            else if(p[i]>mn){
+                sum+=p[i]-mn;
+                mn=max(mn,p[i]);
+            }
+        }
+        return sum;
+    }
+};
